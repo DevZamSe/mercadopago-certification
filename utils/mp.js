@@ -50,9 +50,9 @@ async function createPreferencesSimple(info, res1) {
                 "receiver_address": {}
             },
             "back_urls": {
-                    "success": "http://localhost:3000/success",
-                    "failure": "http://localhost:3000/failure",
-                    "pending": "http://localhost:3000/pending"
+                    "success": "https://mercadopago-devzamse.herokuapp.com/success",
+                    "failure": "https://mercadopago-devzamse.herokuapp.com/failure",
+                    "pending": "https://mercadopago-devzamse.herokuapp.com/pending"
             },
             "differential_pricing": {}
         };
