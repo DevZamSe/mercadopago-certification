@@ -6,7 +6,7 @@ var options = {
   'hostname': 'api.mercadopago.com',
   'path': '/checkout/preferences',
   'headers': {
-    'Authorization': 'Bearer APP_USR-6655090400443592-110812-60ab28521b7f802873923d172c2c63b4-161054091',
+    'Authorization': 'Bearer APP_USR-8208253118659647-112521-dd670f3fd6aa9147df51117701a2082e-677408439',
     'Content-Type': 'application/json',
     "x-integrator-id": 'dev_2e4ad5dd362f11eb809d0242ac130004'
   },
@@ -44,7 +44,7 @@ async function createPreferencesSimple(info, res1) {
                 "excluded_payment_types": [
                 {}
                 ],
-                "default_installments":6
+                "installments":6
             },
             "shipments": {
                 "free_methods": [
@@ -72,7 +72,7 @@ async function createPreferencesSimple(info, res1) {
         res.on("end", function (chunk) {
             var body = Buffer.concat(chunks);
             response = JSON.parse(body);
-            // console.log(response.init_point);
+            console.log("la preferencia oficial es ",response);
             res1.redirect(response.init_point);
             // return response.init_point
         });

@@ -28,7 +28,8 @@ app.post('/webcheckout', function(req, res){
 
 app.get('/success', function (req, res) {
 
-    console.log(req.originalUrl);
+    console.log(req.originalUrl.split('?')[1].split('&'));
+
     try {
         let data = {
             "collection_id":req.originalUrl.split('?')[1].split('&')[0].replace("'",'').split('=')[1],
