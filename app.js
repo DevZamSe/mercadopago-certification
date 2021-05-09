@@ -27,12 +27,20 @@ app.post('/webcheckout', function(req, res){
 });
 
 app.get('/success', function (req, res) {
-    let data = {
-        "collection_id":req.originalUrl.split('?')[1].split('&')[0].replace("'",'').split('=')[1],
-        "payment_id":req.originalUrl.split('?')[1].split('&')[2].replace("'",'').split('=')[1],
-        "external_reference":req.originalUrl.split('?')[1].split('&')[4].replace("'",'').split('=')[1]
-    };
-    res.render('success', data);
+
+    console.log(req.originalUrl);
+    try {
+        let data = {
+            "collection_id":req.originalUrl.split('?')[1].split('&')[0].replace("'",'').split('=')[1],
+            "payment_id":req.originalUrl.split('?')[1].split('&')[2].replace("'",'').split('=')[1],
+            "external_reference":req.originalUrl.split('?')[1].split('&')[4].replace("'",'').split('=')[1]
+        };
+        res.render('success', data);
+        
+    } catch (e) {
+        res.render('success');
+    }
+
 });
 
 app.get('/failure', function (req, res) {
