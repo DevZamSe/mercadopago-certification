@@ -36,6 +36,7 @@ app.get('/success', function (req, res) {
             "payment_id":req.originalUrl.split('?')[1].split('&')[2].replace("'",'').split('=')[1],
             "external_reference":req.originalUrl.split('?')[1].split('&')[4].replace("'",'').split('=')[1]
         };
+        console.log(data);
         res.render('success', data);
         
     } catch (e) {

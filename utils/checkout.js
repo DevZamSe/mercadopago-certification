@@ -10,27 +10,38 @@ function CheckoutMP(info, res) {
         {
             "items": [
                 {
+                    "id":"1234",
                     "title": info.title,
-                    "description": "by devzamse",
+                    "description": "Dipositivo móvil de Tienda e-commerce",
                     "picture_url": info.img,
-                    "category_id": "smartphone",
+                    "category_id": "1234",
                     "quantity": 1,
                     "currency_id": "PEN",
                     "unit_price": parseInt(info.price)
                 }
             ],
             "payer": {
-                "phone": {},
-                "identification": {},
-                "address": {}
+                "name": "Lalo Landa",
+                "phone": {
+                    "area_code":"52",
+                    "number": 5549737300
+                },
+                "identification": {
+                    "type":"DNI",
+                    "number":"22334445"
+                },
+                "address": {
+                    "street_name":"Insurgentes sur",
+                    "street_number":1602,
+                    "zip_code":"03940"
+                }
             },
             "payment_methods": {
                 "excluded_payment_methods": [
-                {"id":"atm"},
-                {"id":"dinners"}
+                    {"id":"dinners"}
                 ],
                 "excluded_payment_types": [
-                {}
+                    {"id":"atm"},
                 ],
                 "installments":6
             },
@@ -45,7 +56,9 @@ function CheckoutMP(info, res) {
                     "failure": "https://mercadopago-devzamse.herokuapp.com/failure",
                     "pending": "https://mercadopago-devzamse.herokuapp.com/pending"
             },
-            "differential_pricing": {}
+            "auto_return":"approved",
+            "differential_pricing": {},
+            "external_reference":"1234"
         };
 
     mp.preferences.create(data)
