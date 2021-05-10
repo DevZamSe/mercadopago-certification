@@ -16,14 +16,15 @@ var options = {
 
 async function createPreferencesSimple(info, res1) {
 
+    console.log(info);
+
     let data = 
         {
             "items": [
                 {
-                    "id":"1234",
                     "title": info.title,
                     "description": "Dipositivo móvil de Tienda e-commerce",
-                    "picture_url": info.img,
+                    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Tour_eiffel_at_sunrise_from_the_trocadero.jpg/1200px-Tour_eiffel_at_sunrise_from_the_trocadero.jpg",
                     "quantity": 1,
                     "currency_id": "PEN",
                     "unit_price": parseInt(info.price)
