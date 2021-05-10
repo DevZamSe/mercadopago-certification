@@ -55,6 +55,7 @@ app.get('/pending', function (req, res) {
 
 app.post('/webhook', function(req, res) {
     var response = req.body;
+    console.log("si trae data we");
     console.log(response);
     res.status(200);
     res.send({result:"successfully"});

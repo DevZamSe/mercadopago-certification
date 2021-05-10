@@ -14,9 +14,8 @@ function CheckoutMP(info, res) {
                 {
                     "title": info.title,
                     "description": "Dipositivo móvil de Tienda e-commerce",
-                    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Tour_eiffel_at_sunrise_from_the_trocadero.jpg/1200px-Tour_eiffel_at_sunrise_from_the_trocadero.jpg",
+                    "picture_url": info.img,
                     "quantity": 1,
-                    "currency_id": "PEN",
                     "unit_price": parseInt(info.price)
                 }
             ],
@@ -54,7 +53,10 @@ function CheckoutMP(info, res) {
                 "receiver_address": {
                     "zip_code":"03940",
                     "street_name":"Insurgentes sur",
-                    "street_number":1602
+                    "street_number":1602,
+                    "country_name":"Peru",
+                    "state_name":"Lima",
+                    "city_name":"Lima"
                 }
             },
             "back_urls": {
@@ -64,8 +66,10 @@ function CheckoutMP(info, res) {
             },
             "auto_return":"approved",
             "differential_pricing": {},
-            "external_reference":"nilovila18@gmail.com"
+            "external_reference":"nilovila18@gmail.com",
+            "notification_url":"https://mercadopago-devzamse.herokuapp.com/webhook"
         };
+
 
     mp.preferences.create(data)
     .then(function(response){
