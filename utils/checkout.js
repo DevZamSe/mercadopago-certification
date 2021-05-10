@@ -12,6 +12,7 @@ function CheckoutMP(info, res) {
         {
             "items": [
                 {
+                    "id":"1234",
                     "title": info.title,
                     "description": "Dipositivo móvil de Tienda e-commerce",
                     "picture_url": info.img,
@@ -32,8 +33,7 @@ function CheckoutMP(info, res) {
                     "number":"22334445"
                 },
                 "address": {
-                    "street_name":"Insurgentes sur",
-                    "street_number":1602,
+                    "street_name":"Insurgentes Sur 1602",
                     "zip_code":"03940"
                 }
             },
@@ -52,8 +52,7 @@ function CheckoutMP(info, res) {
                 ],
                 "receiver_address": {
                     "zip_code":"03940",
-                    "street_name":"Insurgentes sur",
-                    "street_number":1602,
+                    "street_name":"Insurgentes Sur 1602",
                     "country_name":"Peru",
                     "state_name":"Lima",
                     "city_name":"Lima"
