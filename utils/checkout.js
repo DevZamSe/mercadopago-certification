@@ -14,10 +14,11 @@ function CheckoutMP(info, res) {
                 {
                     "id":"1234",
                     "title": info.title,
+                    "currency_id":"PEN",
                     "description": "Dipositivo móvil de Tienda e-commerce",
                     "picture_url": info.img,
                     "quantity": 1,
-                    "unit_price": parseInt(info.price)
+                    "unit_price": parseInt(info.price),
                 }
             ],
             "payer": {
@@ -33,7 +34,8 @@ function CheckoutMP(info, res) {
                     "number":"22334445"
                 },
                 "address": {
-                    "street_name":"Insurgentes Sur 1602",
+                    "street_name":"Insurgentes Sur",
+                    "street_number":1602,
                     "zip_code":"03940"
                 }
             },
@@ -47,12 +49,10 @@ function CheckoutMP(info, res) {
                 "installments":6
             },
             "shipments": {
-                "free_methods": [
-                {}
-                ],
                 "receiver_address": {
                     "zip_code":"03940",
-                    "street_name":"Insurgentes Sur 1602",
+                    "street_name":"Insurgentes Sur",
+                    "street_number":1602,
                     "country_name":"Peru",
                     "state_name":"Lima",
                     "city_name":"Lima"
@@ -64,7 +64,6 @@ function CheckoutMP(info, res) {
                     "pending": "https://mercadopago-devzamse.herokuapp.com/pending"
             },
             "auto_return":"approved",
-            "differential_pricing": {},
             "external_reference":"nilovila18@gmail.com",
             "notification_url":"https://mercadopago-devzamse.herokuapp.com/webhook"
         };
