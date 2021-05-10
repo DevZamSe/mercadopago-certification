@@ -14,14 +14,15 @@ function CheckoutMP(info, res) {
                     "title": info.title,
                     "description": "Dipositivo móvil de Tienda e-commerce",
                     "picture_url": info.img,
-                    "category_id": "1234",
                     "quantity": 1,
                     "currency_id": "PEN",
                     "unit_price": parseInt(info.price)
                 }
             ],
             "payer": {
-                "name": "Lalo Landa",
+                "name": "Lalo",
+                "surname":"Landa",
+                "email":"test_user_46542185@testuser.com",
                 "phone": {
                     "area_code":"52",
                     "number": 5549737300
@@ -38,7 +39,7 @@ function CheckoutMP(info, res) {
             },
             "payment_methods": {
                 "excluded_payment_methods": [
-                    {"id":"dinners"}
+                    {"id":"diners"}
                 ],
                 "excluded_payment_types": [
                     {"id":"atm"},
@@ -49,7 +50,11 @@ function CheckoutMP(info, res) {
                 "free_methods": [
                 {}
                 ],
-                "receiver_address": {}
+                "receiver_address": {
+                    "zip_code":"03940",
+                    "street_name":"Insurgentes sur",
+                    "street_number":1602
+                }
             },
             "back_urls": {
                     "success": "https://mercadopago-devzamse.herokuapp.com/success",
@@ -58,7 +63,7 @@ function CheckoutMP(info, res) {
             },
             "auto_return":"approved",
             "differential_pricing": {},
-            "external_reference":"1234"
+            "external_reference":"nilovila18@gmail.com"
         };
 
     mp.preferences.create(data)
